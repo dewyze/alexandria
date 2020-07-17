@@ -1,15 +1,1 @@
-<%= form_with model: @store do |form|%>
-  <h1>Store</h1>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <h1>Books</h1>
-  <%= form.fields_for :books do |book_form| %>
-    <%= render partial: "book_fields", locals: { book_form: book_form } %>
-  <% end %>
-  <div class="fields">
-    <%= form.button "Add Book", class: "new" %>
-  </div>
-  <div class="fields">
-    <%= form.button "Save", type: :submit %>
-  </div>
-<% end %>
+<%= render "form" %>

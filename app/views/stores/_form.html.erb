@@ -1,0 +1,19 @@
+<div data-controller="nested-attributes" data-nested-attributes-next-index="<%= @store.books.length %>">
+  <%= form_with model: @store do |form|%>
+    <h1>Store</h1>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <h1>Books</h1>
+    <div data-target="nested-attributes.bookContainer">
+      <%= form.fields_for :books do |book_form| %>
+        <%= render partial: "book_fields", locals: { book_form: book_form } %>
+      <% end %>
+    </div>
+    <div class="fields">
+      <%= button_tag "Add Book", class: "new", data: { action: "nested-attributes#addRow" } %>
+    </div>
+    <div class="fields">
+      <%= form.button "Save", type: :submit %>
+    </div>
+  <% end %>
+</div>

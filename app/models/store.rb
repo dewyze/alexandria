@@ -6,6 +6,6 @@ class Store < ApplicationRecord
   private
 
   def reject_books(attributes)
-    %w[name].blank?
+    attributes["title"].blank?
   end
 end

@@ -37,10 +37,10 @@ class StoresController < ApplicationController
   private
 
   def create_params
-    params.require(:store).permit(books_attributes: %i[title])
+    params.require(:store).permit(:name, books_attributes: %i[title])
   end
 
   def update_params
-    params.require(:store).permit(:id, books_attributes: %i[id title _destroy])
+    params.require(:store).permit(:id, :name, books_attributes: %i[id title _destroy])
   end
 end

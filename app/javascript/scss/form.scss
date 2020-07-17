@@ -25,6 +25,7 @@ input {
 }
 
 button {
+  cursor: pointer;
   border-width: 1px;
   padding: 8px;
   border-radius: 4px;
@@ -34,16 +35,25 @@ button {
   &[type="submit"] {
     background-color: #3298dc;
     color: white;
+    &:hover {
+      background-color: #2793da;
+    }
   }
 
   &.delete {
-    background-color: crimson;
+    background-color: #f14668;
     flex: 0 0 0;
+    &:hover {
+      background-color: #f03a5f;
+    }
   }
 
   &.new {
     background-color: lightgray;
     color: black;
+    &:hover {
+      background-color: #cccccc;
+    }
   }
 }
 
