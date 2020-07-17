@@ -10,11 +10,5 @@ module FormFields
         end
       end
     end
-
-    private
-
-    def new_params
-      params.permit(:index)
-    end
   end
 end

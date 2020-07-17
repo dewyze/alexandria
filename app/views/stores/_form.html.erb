@@ -1,16 +1,16 @@
-<div data-controller="nested-attributes" data-nested-attributes-next-index="<%= @store.books.length %>">
+<div data-controller="toggle value indexed-content-loader" data-indexed-content-loader-next-index=<%= @store.books.length %> data-indexed-content-loader-insert-location="beforeend" data-indexed-content-loader-url="/form_fields/store_books/new" data-value-value=1 data-toggle-class="hidden">
   <%= form_with model: @store do |form|%>
     <h1>Store</h1>
     <%= form.label :name %>
     <%= form.text_field :name %>
     <h1>Books</h1>
-    <div data-target="nested-attributes.bookContainer">
+    <div data-target="indexed-content-loader.container">
       <%= form.fields_for :books do |book_form| %>
         <%= render partial: "book_fields", locals: { book_form: book_form } %>
       <% end %>
     </div>
     <div class="fields">
-      <%= button_tag "Add Book", class: "new", data: { action: "nested-attributes#addRow" } %>
+      <%= button_tag "Add Book", class: "new", data: { action: "indexed-content-loader#insert" } %>
     </div>
     <div class="fields">
       <%= form.button "Save", type: :submit %>
