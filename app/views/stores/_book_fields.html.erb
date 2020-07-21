@@ -1,10 +1,8 @@
-<div class="fieldset">
+<div class="fieldset" data-target="toggle.content">
   <%= book_form.label :title %>
   <div class="fields">
     <%= book_form.text_field :title %>
-    <%= button_tag "Delete", class: "delete", data: { action: "nested-attributes#deleteRow", "index": book_form.index } %>
-    <% if book_form.object.persisted? %>
-      <%= book_form.hidden_field :_destroy, value: 0, data: { target: "nested-attributes.destroyInput", "index": book_form.index } %>
-    <% end %>
+    <%= button_tag "Delete", class: "delete", data: { action: "value#update toggle#toggle", "index": book_form.index } %>
+    <%= book_form.hidden_field :_destroy, value: 0, data: { target: "value.content" } %>
   </div>
 </div>
